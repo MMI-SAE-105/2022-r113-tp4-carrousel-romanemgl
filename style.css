@@ -4,25 +4,56 @@ display height flex flex none margin
 max-width width width
 */
 * {
-    /* change le box model */
+    box-sizing: border-box;
 }
 
 img {
-    /* image responsive, largeur maxi */
-    /* hauteur "auto" */
+    max-width: 100%;
+    height: auto;
 }
 
 .carrousel_parent-ecrans {
-    /* aligne horizontalement les enfants */
-    /* largeur du parent */
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
 
 }
 
 .carrousel_ecran {
-    /* largeur du parent pour chaque enfant */
-    /* permet de garder toute la largeur du parent */
+    width: 100%;
+    flex: none;
+    scroll-snap-align: start;/ aligne les enfants par blocs /
 }
 
 .carrousel_ecran figure {
-    /* enlève les marges par défaut */
+    margin: 0;
+
+}
+
+.carrousel {
+    position: relative;
+}
+
+.carrousel_btn {
+    position: absolute;
+    top: 50%;
+    /* centre verticalement */
+    transform: translateY(-50%);
+    /* methode du point mort */
+    width: 2rem;
+    height: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    border: none;
+    display: grid;
+    place-content: center;
+    color: #fff;
+}
+
+.carrousel_btn-avant {
+    left: 0;
+}
+
+.carrousel_btn-apres {
+    right: 0;
 }
